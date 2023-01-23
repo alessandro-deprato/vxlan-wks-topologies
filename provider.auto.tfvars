@@ -1,7 +1,7 @@
 address  = ""
 username = ""
 # For security reasons prefer an environment variable. "source TF_VAR_password=your_password"
-# In below or env are neither set Terraform will request the password
+# If below or env are neither set Terraform will request the password
 #password = ""
 
 #Uncomment this one below if you do not want to start the nodes automatically
