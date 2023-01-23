@@ -143,9 +143,9 @@ nodes:
       # minimum needed config to login
       no password strength-check
       username admin role network-admin
-      username admin password Cisco123! role network-admin
+      username admin password ${device_password} role network-admin
       username cisco role network-admin
-      username cisco password Cisco123! role network-admin
+      username cisco password ${device_password} role network-admin
       hostname spine-1
       interface mgmt0
       ip add ${spine_1_ip}
@@ -248,9 +248,9 @@ nodes:
       # minimum needed config to login
       no password strength-check
       username admin role network-admin
-      username admin password Cisco123! role network-admin
+      username admin password ${device_password} role network-admin
       username cisco role network-admin
-      username cisco password Cisco123! role network-admin
+      username cisco password ${device_password} role network-admin
       hostname border-1
       interface mgmt0
       ip add ${border_1_ip}
@@ -352,9 +352,9 @@ nodes:
       # minimum needed config to login
       no password strength-check
       username admin role network-admin
-      username admin password Cisco123! role network-admin
+      username admin password ${device_password} role network-admin
       username cisco role network-admin
-      username cisco password Cisco123! role network-admin
+      username cisco password ${device_password} role network-admin
       hostname leaf-1
       interface mgmt0
       ip add ${leaf_1_ip}
@@ -456,9 +456,9 @@ nodes:
       # minimum needed config to login
       no password strength-check
       username admin role network-admin
-      username admin password Cisco123! role network-admin
+      username admin password ${device_password} role network-admin
       username cisco role network-admin
-      username cisco password Cisco123! role network-admin
+      username cisco password ${device_password} role network-admin
       hostname leaf-2
       interface mgmt0
       ip add ${leaf_2_ip}
@@ -664,9 +664,9 @@ nodes:
       # minimum needed config to login
       no password strength-check
       username admin role network-admin
-      username admin password Cisco123! role network-admin
+      username admin password ${device_password} role network-admin
       username cisco role network-admin
-      username cisco password Cisco123! role network-admin
+      username cisco password ${device_password} role network-admin
       hostname leaf-3
       interface mgmt0
       ip add ${leaf_3_ip}
@@ -765,9 +765,9 @@ nodes:
       # minimum needed config to login
       no password strength-check
       username admin role network-admin
-      username admin password Cisco123! role network-admin
+      username admin password ${device_password} role network-admin
       username cisco role network-admin
-      username cisco password Cisco123! role network-admin
+      username cisco password ${device_password} role network-admin
       hostname core-1
       interface mgmt0
       ip add ${core_1_ip}
@@ -879,7 +879,7 @@ nodes:
       ip route add default via 172.25.100.254
       # configurable user account
       USERNAME=cisco
-      PASSWORD=cisco
+      PASSWORD=${device_password}
     cpu_limit: 100
     cpus: 1
     data_volume: 0
@@ -905,7 +905,7 @@ nodes:
       ip route add default via 8.8.8.254
       # configurable user account
       USERNAME=cisco
-      PASSWORD=cisco
+      PASSWORD=${device_password}
     cpu_limit: 100
     cpus: 1
     data_volume: 0
@@ -931,7 +931,7 @@ nodes:
       ip route add default via 172.25.8.254
       # configurable user account
       USERNAME=cisco
-      PASSWORD=cisco
+      PASSWORD=${device_password}
     cpu_limit: 100
     cpus: 1
     data_volume: 0
@@ -956,7 +956,7 @@ nodes:
       system_info:
         default_user:
           name: cisco
-      password: cisco
+      password: ${device_password}
       chpasswd: { expire: False }
       ssh_pwauth: True
       runcmd:
