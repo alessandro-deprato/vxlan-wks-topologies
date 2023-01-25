@@ -147,8 +147,8 @@ links:
     n1: n10
     n2: n3
     i1: i3
-    i2: i7
-    label: core-1-Ethernet1/2<->border-2-Ethernet1/6
+    i2: i6
+    label: core-1-Ethernet1/2<->border-2-Ethernet1/5
   - id: l24
     n1: n11
     n2: n9
