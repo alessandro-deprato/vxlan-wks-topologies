@@ -776,6 +776,7 @@ nodes:
       vrf context Infra
       address-family ipv4 unicast
       ip route 0.0.0.0/0 ${device_gateway}
+      ip route 10.50.128.0/23 ${device_gateway}
       vrf context Internet
       vrf context Tenant_A
       vrf context management
