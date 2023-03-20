@@ -1,6 +1,6 @@
 address  = ""
 username = ""
-# For security reasons prefer an environment variable. "source TF_VAR_password=your_password"
+# For security reasons prefer an environment variable. "export TF_VAR_password=your_password"
 # If below or env are neither set Terraform will request the password
 #password = ""
 
