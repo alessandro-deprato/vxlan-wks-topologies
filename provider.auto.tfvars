@@ -20,6 +20,6 @@ configuration_variables = {
   "core_1_ip"      = ""
   # Set the below only if you want an image different from the default
   #image_definition = ""
-  management_bridge = ""
-  device_password   = ""
+  "management_bridge" = ""
+  "device_password"   = ""
 }
