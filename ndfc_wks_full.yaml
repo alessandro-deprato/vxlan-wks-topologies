@@ -1164,7 +1164,7 @@ nodes:
       no cdp enable
       vrf context Infra
       address-family ipv4 unicast
-      ip route 10.50.128.0/23 172.23.255.254
+      ip route 10.58.30.0/26 172.23.255.254
       vrf context Internet
       vrf context prod
       vrf context no_prod
@@ -1202,7 +1202,7 @@ nodes:
       network 172.26.8.0/24
       vrf  Infra
       address-family ipv4 unicast
-      network 10.50.128.0/23
+      network 10.50.30.0/26
       event manager run BOOTCONFIG
     cpu_limit: 100
     cpus: 1
