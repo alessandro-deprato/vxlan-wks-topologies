@@ -1164,7 +1164,7 @@ nodes:
       no cdp enable
       vrf context Infra
       address-family ipv4 unicast
-      ip route 10.50.128.0/23 172.16.254.1
+      ip route 10.50.128.0/23 172.23.255.254
       vrf context Internet
       vrf context prod
       vrf context no_prod
@@ -1188,7 +1188,7 @@ nodes:
       interface Ethernet1/7
       no switchport
       vrf member Infra
-      ip address 172.16.254.100/24
+      ip address 172.23.254.100/24
       no shutdown
       router bgp 65058
       vrf  Internet
