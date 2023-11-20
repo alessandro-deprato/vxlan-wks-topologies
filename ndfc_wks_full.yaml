@@ -959,7 +959,45 @@ nodes:
         slot: 0
         type: physical
   - boot_disk_size: null
-    configuration: ''
+    configuration: |-
+      # workaround for booting to loader> prompt
+      echo 'from cli import cli' > set_boot.py
+      echo 'import json' >> set_boot.py
+      echo 'import os' >> set_boot.py
+      echo 'import time' >> set_boot.py
+      echo 'bootimage = json.loads(cli("show version | json"))["kick_file_name"]' >> set_boot.py
+      echo 'set_boot = cli("conf t ; boot nxos {} ; no event manager applet BOOTCONFIG".format(bootimage))' >> set_boot.py
+      echo 'i = 0' >> set_boot.py
+      echo 'while i < 10:' >> set_boot.py
+      echo '    try:' >> set_boot.py
+      echo '        save_config = cli("copy running-config startup-config")' >> set_boot.py
+      echo '        break' >> set_boot.py
+      echo '    except Exception:' >> set_boot.py
+      echo '        i += 1' >> set_boot.py
+      echo '        time.sleep(1)' >> set_boot.py
+      echo 'os.remove("/bootflash/set_boot.py")' >> set_boot.py
+      feature evmed
+      event manager applet BOOTCONFIG
+       event none
+       action 1.0 cli python bootflash:set_boot.py
+       action 2.0 cli interface eth1/1-15
+       action 2.1 cli shut
+       action 3.0 cli interface eth1/1-15
+       action 3.1 cli no shut
+      # minimum needed config to login
+      no password strength-check
+      username admin role network-admin
+      username admin password ${device_password} role network-admin
+      username cisco role network-admin
+      username cisco password ${device_password} role network-admin
+      hostname tor-1
+      interface mgmt0
+      ip add ${tor_1_ip}
+      no shut
+      no cdp enable
+      vrf context management
+      ip route 0.0.0.0/0 ${device_gateway}
+      event manager run BOOTCONFIG
     cpu_limit: 100
     cpus: 1
     data_volume: null
@@ -1476,7 +1514,45 @@ nodes:
         slot: 0
         type: physical
   - boot_disk_size: null
-    configuration: ''
+    configuration: |-
+      # workaround for booting to loader> prompt
+      echo 'from cli import cli' > set_boot.py
+      echo 'import json' >> set_boot.py
+      echo 'import os' >> set_boot.py
+      echo 'import time' >> set_boot.py
+      echo 'bootimage = json.loads(cli("show version | json"))["kick_file_name"]' >> set_boot.py
+      echo 'set_boot = cli("conf t ; boot nxos {} ; no event manager applet BOOTCONFIG".format(bootimage))' >> set_boot.py
+      echo 'i = 0' >> set_boot.py
+      echo 'while i < 10:' >> set_boot.py
+      echo '    try:' >> set_boot.py
+      echo '        save_config = cli("copy running-config startup-config")' >> set_boot.py
+      echo '        break' >> set_boot.py
+      echo '    except Exception:' >> set_boot.py
+      echo '        i += 1' >> set_boot.py
+      echo '        time.sleep(1)' >> set_boot.py
+      echo 'os.remove("/bootflash/set_boot.py")' >> set_boot.py
+      feature evmed
+      event manager applet BOOTCONFIG
+       event none
+       action 1.0 cli python bootflash:set_boot.py
+       action 2.0 cli interface eth1/1-15
+       action 2.1 cli shut
+       action 3.0 cli interface eth1/1-15
+       action 3.1 cli no shut
+      # minimum needed config to login
+      no password strength-check
+      username admin role network-admin
+      username admin password ${device_password} role network-admin
+      username cisco role network-admin
+      username cisco password ${device_password} role network-admin
+      hostname tor-2
+      interface mgmt0
+      ip add ${tor_2_ip}
+      no shut
+      no cdp enable
+      vrf context management
+      ip route 0.0.0.0/0 ${device_gateway}
+      event manager run BOOTCONFIG
     cpu_limit: null
     cpus: null
     data_volume: null
