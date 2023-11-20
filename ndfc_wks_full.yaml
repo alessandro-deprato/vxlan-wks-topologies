@@ -1,7 +1,7 @@
 lab:
   description: Nexus 9000v VXLAN EVPN Topology to be used during EMEA Workshop
   notes: Alessandro De Prato, TME, Data Center and Provider Connectivity BU, Cisco
-  title: AMS-CML-WKS-VXLAN-FULL
+  title: MIL-CML-WKS-VXLAN-FULL
   version: 0.2.0
 links:
   - id: l0
