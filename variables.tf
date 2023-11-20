@@ -35,6 +35,8 @@ variable "configuration_variables" {
     leaf_1_ip         = string
     leaf_2_ip         = string
     leaf_3_ip         = string
+    tor_1_ip         = string
+    tor_2_ip         = string
     core_1_ip         = string
     image_definition  = optional(string, "null")
     management_bridge = string
