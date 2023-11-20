@@ -17,6 +17,8 @@ configuration_variables = {
   "leaf_1_ip"      = ""
   "leaf_2_ip"      = ""
   "leaf_3_ip"      = ""
+  "tor_1_ip"      = ""
+  "tor_2_ip"      = ""
   "core_1_ip"      = ""
   # Set the below only if you want an image different from the default
   #image_definition = ""
