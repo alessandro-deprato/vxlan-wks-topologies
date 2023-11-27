@@ -1203,7 +1203,7 @@ nodes:
       network 172.26.8.0/24
       vrf  Infra
       address-family ipv4 unicast
-      network 10.50.30.0/26
+      network 10.58.30.0/26
       event manager run BOOTCONFIG
     cpu_limit: 100
     cpus: 1
