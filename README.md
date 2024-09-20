@@ -4,9 +4,9 @@
 This repository contains VXLAN BGP EVPN CML Topologies to be used with NDFC.
 
 ### Prerequisites
-Download the repository files
-Install Terraform - Minimum version is 1.3
-Fill the provider.auto.tfvars file with your environment management details
+- Download the repository files
+- Install Terraform - Minimum version is 1.3
+- Fill the provider.auto.tfvars file with your environment management details
 
 * Init
 
