@@ -1198,7 +1198,7 @@ nodes:
       no switchport
       no cdp enabled
       vrf member Infra
-      ip address 172.23.254.100/24
+      ip address 172.23.254.100/25
       no shutdown
       router bgp 65058
       vrf  Internet
